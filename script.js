@@ -92,6 +92,7 @@ function getFieldName(input) {
 // Event listener
 form.addEventListener("submit", function (e) {
   e.preventDefault();
+
   checkRequired([username, email, street, suburb]);
   checkLength(username, 3, 15);
   checkPhoneLength(phone, 6);
@@ -99,17 +100,18 @@ form.addEventListener("submit", function (e) {
   checkPostCode(postCode);
   checkEmail(email);
 
-  const inputUserName = userName.value;
-  const inputEmail = email.value;
-  const inputPhone = phone.value;
-  const inputStreet = street.value;
-  const inputSuburb = suburb.value;
-  const inputPostCode = postCode.value;
+  let inputUserName = userName.value;
+  let inputEmail = email.value;
+  let inputPhone = phone.value;
+  let inputStreet = street.value;
+  let inputSuburb = suburb.value;
+  let inputPostCode = postCode.value;
 
-  formData.push({username: inputUserName, email: inputEmail, phone: inputPhone, street: inputStreet, suburb: inputSuburb, postcode: inputPostCode});
-
-  console.log(formData);
-  writeData(formData);
+  const error = document.querySelector(".error");
+  if (!error) {
+    formData.push({username: inputUserName, email: inputEmail, phone: inputPhone, street: inputStreet, suburb: inputSuburb, postcode: inputPostCode});
+    writeData(formData);
+  }
 });
 
 function writeData(input) {
