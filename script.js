@@ -6,7 +6,10 @@ const street = document.getElementById("street");
 const suburb = document.getElementById("suburb");
 const postCode = document.getElementById("post-code");
 const table = document.getElementById("table-body");
-
+const close = document.getElementById("close");
+const open = document.getElementById("open");
+const modal = document.getElementById("modal");
+const modalForm = document.getElementById("modal-form");
 let formData = [];
 
 // Show input error message
@@ -90,7 +93,7 @@ function getFieldName(input) {
 }
 
 // Event listener
-form.addEventListener("submit", function (e) {
+form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   checkRequired([username, email, street, suburb]);
@@ -111,9 +114,11 @@ form.addEventListener("submit", function (e) {
   if (!error) {
     formData.push({username: inputUserName, email: inputEmail, phone: inputPhone, street: inputStreet, suburb: inputSuburb, postcode: inputPostCode});
     writeData(formData);
+    modal.classList.add("show-modal");
   }
 });
 
+// output user input to table in DOM
 function writeData(input) {
   table.innerHTML = ` 
       <tr>
@@ -126,3 +131,11 @@ function writeData(input) {
       </tr>
   `;
 }
+
+modalForm.addEventListener("submit", (e) => {
+  modal.classList.remove("show-modal");
+  e.preventDefault();
+});
+
+// close modal
+close.addEventListener("click", () => modal.classList.remove("show-modal"));
