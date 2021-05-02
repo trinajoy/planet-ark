@@ -5,7 +5,7 @@ const phone = document.getElementById("phone");
 const street = document.getElementById("street");
 const suburb = document.getElementById("suburb");
 const postCode = document.getElementById("post-code");
-const userData = document.getElementById("user-data");
+const table = document.getElementById("table-body");
 
 let formData = [];
 
@@ -89,7 +89,7 @@ function getFieldName(input) {
   return input.id.charAt(0).toUpperCase() + input.id.slice(1);
 }
 
-// Event listeners
+// Event listener
 form.addEventListener("submit", function (e) {
   e.preventDefault();
   checkRequired([username, email]);
@@ -108,35 +108,19 @@ form.addEventListener("submit", function (e) {
 
   formData.push({username: inputUserName, email: inputEmail, phone: inputPhone, street: inputStreet, suburb: inputSuburb, postcode: inputPostCode});
 
-  // myJSON = JSON.stringify(formData);
-  //console.log(formData);
-  // console.log(myJSON);
-
   console.log(formData);
   writeData(formData);
 });
 
 function writeData(input) {
-  userData.innerHTML = `
-  
-  <table style="width:100%">
-    <tr>
-      <th> Username </th>
-      <th> Email </th>
-      <th> Phone </th> 
-      <th> Street Address </th>
-      <th> Suburb </th>
-      <th> Post Code </th>
-    </tr>
-    <tr>
-      <td>${input[0].username}</td>
-      <td>${input[0].email}</td>
-      <td>${input[0].phone}</td>
-      <td>${input[0].street}</td>
-      <td>${input[0].suburb}</td>
-      <td>${input[0].postcode}</td>
-    </tr>
-  </table>
-
+  table.innerHTML = ` 
+      <tr>
+        <td>${input[0].username}</td>
+        <td>${input[0].email}</td>
+        <td>${input[0].street}</td>
+        <td>${input[0].suburb}</td>
+        <td>${input[0].postcode}</td>
+        <td>${input[0].phone}</td>
+      </tr>
   `;
 }
