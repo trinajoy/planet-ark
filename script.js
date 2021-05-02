@@ -92,7 +92,7 @@ function getFieldName(input) {
 // Event listener
 form.addEventListener("submit", function (e) {
   e.preventDefault();
-  checkRequired([username, email]);
+  checkRequired([username, email, street, suburb]);
   checkLength(username, 3, 15);
   checkPhoneLength(phone, 6);
   checkPhone(phone);
