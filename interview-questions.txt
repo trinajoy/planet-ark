@@ -1,0 +1,49 @@
+
+
+2) Cold Fusion Code
+
+Without being familiar with Cold Fusion, the code appears to contain  components and structure of a standard web page, such as Head, Body, Scripts etc eg:
+
+Head:
+Google Analytics
+Stylesheets
+Scripts, Plugins
+
+Body:
+Header
+Containers, Content Page, News, Search, Services
+Images, article links  
+Links to articles, events, nav items, account pages, services
+Links to You Tube, Google Maps
+
+
+-------------------------
+
+3) Should be categorised by Material and Demographic eg:
+
+Material
+State
+Suburb/Postcode
+Pageviews 
+PageViews - Unique
+
+
+Potential issues?
+Some data is categorised by post code, others by suburb.
+Some data includes access key, others don't 
+__________________________
+
+
+4) Tree Day Signup
+
+Process of signing up was straight forward:
+- I was able to edit the address and event name after creating the event. 
+- I got an email confirmation after signing up, and also creating the event. 
+
+
+Some things I did notice - after entering a postcode, the dropdown generates a list of schools. If I didn't want to choose a school from the list, I couldn't set the option back to a 'blank' option. I selected the other option of 'School not Listed' and entered a school name. That school did not populate, in the 'New Planting Event' window
+
+On the 'My Events' page, the number of Volunteers didn't match (0 volunteers), what is listed on the 'Event Details' page (5 volunteers).
+
+
+I was unsure about some practical information about the event, but I ended up finding all the answers on the FAQ page. But maybe some of that information could be available in the Coordinator Hub. Maybe a Checklist or special Co-ordinator Guide, could be listed in this section. 

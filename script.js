@@ -58,15 +58,6 @@ function checkLength(input, min, max) {
   }
 }
 
-// Check phone length
-function checkPhoneLength(input, num) {
-  if (input.value.length !== num) {
-    showError(input, `${getFieldName(input)} must only be ${num} numbers`);
-  } else {
-    showSuccess(input);
-  }
-}
-
 // Check post code is valid
 function checkPostCode(input) {
   const re = /^[0-9]+$/;
@@ -77,13 +68,13 @@ function checkPostCode(input) {
   }
 }
 
-// Check phone number is valid
-function checkPhone(input) {
+// Check phone number is valid and max length
+function checkPhone(input, num) {
   const re = /^[0-9]+$/;
-  if (re.test(input.value.trim())) {
+  if (re.test(input.value.trim()) && input.value.length == num) {
     showSuccess(input);
   } else {
-    showError(input, "Phone number must contain numbers");
+    showError(input, `${getFieldName(input)} must only be ${num} numbers`);
   }
 }
 
@@ -98,8 +89,7 @@ form.addEventListener("submit", (e) => {
 
   checkRequired([username, email, street, suburb]);
   checkLength(username, 3, 15);
-  checkPhoneLength(phone, 6);
-  checkPhone(phone);
+  checkPhone(phone, 6);
   checkPostCode(postCode);
   checkEmail(email);
 
